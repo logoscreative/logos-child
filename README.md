@@ -12,7 +12,7 @@ The [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-
 
 There are two ways to install WordPress themes / child themes: via the WordPress Dashboard and via FTP.
 
-**Using the WordPress Dashboard**
+### Using the WordPress Dashboard
 
 1. [Download](https://github.com/eightbit/standard-child-theme-kit/zipball/master) the Standard Child Theme Kit.
 2. Locate the "Appearance" menu.
@@ -22,7 +22,7 @@ There are two ways to install WordPress themes / child themes: via the WordPress
 6. On the "Upload" page, locate the theme / child theme archive (zip) on your computer and click "Install Now".
 7. On the following page, click "Activate".
 
-**Using FTP**
+### Using FTP
 
 1. [Download](https://github.com/eightbit/standard-child-theme-kit/zipball/master) the Standard Child Theme Kit.
 2. Unzip the ```eightbit-standard-child-theme-kit.zip``` archive on your computer.
