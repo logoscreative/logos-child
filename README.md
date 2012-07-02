@@ -4,17 +4,17 @@
 
 This is a "getting started" child theme kit for [Standard](http://standardtheme.com), crafted by [8BIT](http://8bit.io).
 
-The [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit) requires Standard Preview 3, which is currently available on our [support forum](http://support.8bit.io) to Support License holders.
+The [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit) requires Standard 3.
 
 ## Installation
 
 *Note: Standard Preview 3 must be installed first for the Standard Child Theme Kit to work correctly.*
 
-There are two ways to install WordPress themes / child themes: via the WordPress Dashboard and via FTP.
+There are two ways to install WordPress themes / child themes: via the WordPress Dashboard (recommended) and via FTP. 
 
 ### Using the WordPress Dashboard
 
-1. [Download](https://github.com/eightbit/standard-child-theme-kit/zipball/master) the Standard Child Theme Kit.
+1. Download the [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit/zipball/master).
 2. Locate the "Appearance" menu.
 3. In the "Appearance" menu, click on "Themes".
 4. On the "Themes" page, click on the "Install Themes" tab.
@@ -24,7 +24,7 @@ There are two ways to install WordPress themes / child themes: via the WordPress
 
 ### Using FTP
 
-1. [Download](https://github.com/eightbit/standard-child-theme-kit/zipball/master) the Standard Child Theme Kit.
+1. Download the [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit/zipball/master).
 2. Unzip the ```eightbit-standard-child-theme-kit.zip``` archive on your computer.
 3. Connect to your server via FTP.
 4. Upload the extracted ```eightbit-standard-child-theme-kit``` directory to the ```/wp-content/themes/``` directory on your server.
@@ -35,7 +35,7 @@ There are two ways to install WordPress themes / child themes: via the WordPress
 
 Find the ```style.css``` file for the Standard Child Theme Kit and locate the "Customizations" section. You can add your own styles under this section to override the styles that come with Standard.
 
-If you happened to name the Standard Preview 3 theme directory anything else besides "standard", you will need to update the "Template" name and the ```@import``` path in the Standard Child Theme Kit's ```style.css``` in order for it to work correctly.
+If you happened to name Standard 3 theme directory anything else besides "standard" when you installed the theme, you will need to update the "Template" name and the ```@import``` path in the Standard Child Theme Kit's ```style.css``` in order for it to work correctly.
 
 ## Frequently Asked Questions
 
@@ -45,5 +45,4 @@ If you happened to name the Standard Preview 3 theme directory anything else bes
 ## Changelog
 
 ### 3.0
-* Q2 2012 Release.
 * Initial release.
