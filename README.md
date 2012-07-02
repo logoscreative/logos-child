@@ -8,7 +8,7 @@ The [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-
 
 ## Installation
 
-*Note: Standard Preview 3 must be installed first for the Standard Child Theme Kit to work correctly.*
+*Note: Standard 3 must be installed first for the Standard Child Theme Kit to work correctly.*
 
 There are two ways to install WordPress themes / child themes: via the WordPress Dashboard (recommended) and via FTP. 
 
