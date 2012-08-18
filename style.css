@@ -1,22 +1,18 @@
 /*  
-Theme Name: Standard Child Theme Kit
+Theme Name: Logos Creative Child Theme for Standard
 Theme URI: https://github.com/eightbit/standard-child-theme-kit
-Version: Preview 3
-Description: This is a "getting started" child theme kit for Standard.
-Author: 8BIT
-Author URI: http://8bit.io
+Version: 1.0
+Description: Logos Creative child theme for Standard 3
+Author: Logos Creative
+Author URI: http://logos-creative.com
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: standard
 */
 
-/* ------------------------------------------------------------------------ Import Standard Styles */
-
 @import url( '../standard/style.css' );
 
-/* ------------------------------------------------------------------------ Customizations */
-
-/* ------------------------------------------------------------------------ Media Queries */
+/* Media Queries */
 
 /* Smartphones */
 @media (max-width: 480px) {
@@ -33,7 +29,6 @@ Template: standard
 	
 }
 
-
 /* Landscape Tablets */
 @media (min-width: 768px) and (max-width: 979px) {
 
@@ -43,4 +38,3 @@ Template: standard
 @media (min-width: 980px) {
 	
 }
-
