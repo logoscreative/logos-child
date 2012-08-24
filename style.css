@@ -11,6 +11,7 @@ Template: standard
 */
 
 @import url( '../standard/style.css' );
+@import url( 'css/lib/font-awesome.css' );
 
 /* Media Queries */
 
