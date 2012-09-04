@@ -18,3 +18,247 @@ function update_bootstrap() {
 }
 
 add_action( 'wp_enqueue_scripts', 'update_bootstrap', 11 );
+
+/* Bootstrap Shortcodes */
+
+/* Collapse: http://twitter.github.com/bootstrap/javascript.html#collapse */
+
+/* [collapse title=null element="h2" open=false][/collapse] */
+
+function bs_collapse_func($atts, $content = null) {
+
+	extract( 
+		shortcode_atts( 
+			array(
+			'title' => '',
+			'element' => 'h3',
+			'open' => false
+			), 
+			$atts
+		)
+	);
+	
+	$idnum = rand(1,50);
+	$open == true ? $open = ' in' : $open = '';
+	
+	$collapse_content = "<" . $element . "><a data-toggle='collapse' data-target='#coll" . $idnum . "' class='pointer'>" . $title . " +</a></" . $element . "><div id='coll" . $idnum . "' class='collapse" . $open . "'>" . $content . "</div>";
+
+	return $collapse_content;
+	 
+}
+
+add_shortcode( 'collapse', 'bs_collapse_func' );
+
+/* Buttons: http://twitter.github.com/bootstrap/base-css.html#buttons */
+
+/* [button text=null link="#" style=null size=null icon=null iconwhite=false class=null newwindow=false] */
+
+function bs_button_func($atts) {
+
+	extract( 
+		shortcode_atts( 
+			array(
+			'text' => '',
+			'link' => '',
+			'style' => '',
+			'size' => '',
+			'icon' => '',
+			'iconwhite' => false,
+			'class' => '',
+			'newwindow' => false
+			), 
+			$atts
+		)
+	);
+	
+	if ( $style != '' ) {
+		$style = " btn-" . $style;
+	}
+	
+	if ( $size != '' ) {
+		$size = " btn-" . $size;
+	}
+	
+	$iconwhite == true ? $iconclr = " icon-white" : $iconclr = "";
+	
+	if ( $icon != '' ) {
+		$icon = " <i class='icon-" . $icon . $iconclr . "'></i>";
+	}
+	
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+	
+	$newwindow == true ? $newwindow = " target='_blank'" : $newwindow = "";
+	
+	if ( $link != '' ) {
+		$button_content = "<a href='" . $link . "' class='btn" . $style . $size . $class . "'" . $newwindow . ">" . $text . $icon . "</a>";
+	} else {
+		$button_content = "<button class='btn" . $style . $size . $class . "'>" . $text . $icon . "</button>";
+	}	
+
+	return $button_content;
+	 
+}
+
+add_shortcode( 'button', 'bs_button_func' );
+
+/* Row: http://twitter.github.com/bootstrap/scaffolding.html */
+
+/* [row fluid=false class=null] */
+
+function bs_row_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'fluid' => false,
+			'class' => ''
+			), 
+			$atts
+		)
+	);
+	
+	$fluid == true ? $fluid = "-fluid" : $fluid = "";
+	
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+	
+	$row_content = "<div class='row" . $fluid . $class . "'>" . do_shortcode($content) . "</div>";
+	
+	return $row_content;
+	
+}
+
+add_shortcode( 'row', 'bs_row_func' );
+
+/* Span: http://twitter.github.com/bootstrap/scaffolding.html */
+
+/* [span width=12 offset=0 class=null] */
+
+function bs_span_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'width' => 12,
+			'offset' => 0,
+			'class' => ''
+			), 
+			$atts
+		)
+	);
+	
+	$offset != '0' ? $offset = " offset" . $offset : $offset = "";
+	
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+		
+	$span_content = "<div class='span" . $width . $offset . $class . "'>" . do_shortcode($content) . "</div>";
+	
+	return $span_content;
+	
+}
+
+add_shortcode( 'span', 'bs_span_func' );
+
+/* Button Group: http://twitter.github.com/bootstrap/components.html#buttonGroups */
+
+/* [btngroup class=null] */
+
+function bs_btngrp_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'class' => ''
+			), 
+			$atts
+		)
+	);
+		
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+		
+	$btngrp_content = "<div class='btn-group" . $class . "'>" . do_shortcode($content) . "</div>";
+	
+	return $btngrp_content;
+	
+}
+
+add_shortcode( 'btngroup', 'bs_btngrp_func' );
+
+/* Hero: http://twitter.github.com/bootstrap/components.html#typography */
+
+/* [hero] */
+
+function bs_hero_func($atts, $content = null) {
+		
+	$hero_content = "<div class='hero-unit'>" . do_shortcode($content) . "</div>";
+	
+	return $hero_content;
+	
+}
+
+add_shortcode( 'hero', 'bs_hero_func' );
+
+/* Well: http://twitter.github.com/bootstrap/components.html#misc */
+
+/* [well size=null] */
+
+function bs_well_func($atts, $content = null) {
+
+	extract( 
+		shortcode_atts( 
+			array(
+			'size' => false
+			), 
+			$atts
+		)
+	);
+	
+	$size != '' ? $size = " well-" . $size : $size = "";
+		
+	$well_content = "<div class='well" . $size . "'>" . do_shortcode($content) . "</div>";
+	
+	return $well_content;
+	
+}
+
+add_shortcode( 'well', 'bs_well_func' );
+
+/* Icon: http://fortawesome.github.com/Font-Awesome/ */
+
+/* [icon type=null class=null] */
+
+function bs_icon_func($atts) {
+
+	extract( 
+		shortcode_atts( 
+			array(
+			'type' => '',
+			'class' => ''
+			), 
+			$atts
+		)
+	);
+	
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+		
+	$icon_content = "<i class='icon-" . $type . $class . "'></i>";
+	
+	return $icon_content;
+	
+}
+
+add_shortcode( 'icon', 'bs_icon_func' );
+
+/* Move wpautop() to run after shortcodes */
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
