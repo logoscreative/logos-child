@@ -262,3 +262,4 @@ add_shortcode( 'icon', 'bs_icon_func' );
 
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
+add_filter('widget_text', 'do_shortcode');
