@@ -19,6 +19,17 @@ function update_bootstrap() {
 
 add_action( 'wp_enqueue_scripts', 'update_bootstrap', 11 );
 
+/* Utility Functions */
+
+/* Turn a string into a 'slug' */
+
+function slug($str) {
+	$str = strtolower(trim($str));
+	$str = preg_replace('/[^a-z0-9-]/', '-', $str);
+	$str = preg_replace('/-+/', "-", $str);
+	return $str;
+}
+
 /* Bootstrap Shortcodes */
 
 /* Collapse: http://twitter.github.com/bootstrap/javascript.html#collapse */
@@ -48,6 +59,107 @@ function bs_collapse_func($atts, $content = null) {
 }
 
 add_shortcode( 'collapse', 'bs_collapse_func' );
+
+/* Tabs: http://twitter.github.com/bootstrap/javascript.html#tabs */
+
+/* [tabs class=null][/tabs] */
+
+function bs_tabs_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'class' => ''
+			), 
+			$atts
+		)
+	);
+		
+	if ( $class != '' ) {
+		$class = " " . $class;
+	}
+		
+	$tabs_content = "<ul class='nav nav-tabs'>" . do_shortcode($content) . "</ul>";
+	
+	return $tabs_content;
+	
+}
+
+add_shortcode( 'tabs', 'bs_tabs_func' );
+
+/* Tab: http://twitter.github.com/bootstrap/javascript.html#tabs */
+
+/* [tab title="default" active=false] */
+
+function bs_tab_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'title' => 'default',
+			'active' => false
+			), 
+			$atts
+		)
+	);
+		
+	if ( $active == true ) {
+		$active = " class='active'";
+	} else {
+		$active = "";
+	}
+		
+	$tab_content = "<li" . $active . "><a href='#" . slug($title) . "' data-toggle='tab'>" . $title . "</a></li>";
+	
+	return $tab_content;
+	
+}
+
+add_shortcode( 'tab', 'bs_tab_func' );
+
+/* Tab Content Group: http://twitter.github.com/bootstrap/javascript.html#tabs */
+
+/* [tab-content-group][/tab-content-group] */
+
+function bs_tab_content_group_func($atts, $content = null) {
+		
+	$tab_content_group_content = "<div class='tab-content'>" . do_shortcode($content) . "</div>";
+	
+	return $tab_content_group_content;
+	
+}
+
+add_shortcode( 'tabcontent-group', 'bs_tab_content_group_func' );
+
+/* Tab Content: http://twitter.github.com/bootstrap/javascript.html#tabs */
+
+/* [tabcontent title=null active=true][/tabcontent] */
+
+function bs_tab_content_func($atts, $content = null) {
+	
+	extract( 
+		shortcode_atts( 
+			array(
+			'title' => 'default',
+			'active' => false
+			), 
+			$atts
+		)
+	);
+		
+	if ( $active == true ) {
+		$active = " active";
+	} else {
+		$active = "";
+	}
+		
+	$tab_content = "<div class='tab-pane" . $active . "' id='" . slug($title) . "'>" . do_shortcode($content) . "</div>";
+	
+	return $tab_content;
+	
+}
+
+add_shortcode( 'tabcontent', 'bs_tab_content_func' );
 
 /* Buttons: http://twitter.github.com/bootstrap/base-css.html#buttons */
 
