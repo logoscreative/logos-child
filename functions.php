@@ -373,5 +373,5 @@ add_shortcode( 'icon', 'bs_icon_func' );
 /* Move wpautop() to run after shortcodes */
 
 remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
+add_filter( 'the_content', 'wpautop' , 11);
 add_filter('widget_text', 'do_shortcode');
