@@ -22,7 +22,7 @@ function update_bootstrap() {
 	
 }
 
-add_action( 'wp_enqueue_scripts', 'update_bootstrap', 11 );
+add_action( 'wp_enqueue_scripts', 'update_bootstrap', 999 );
 
 /* Utility Functions */
 
