@@ -45,8 +45,9 @@ function bs_collapse_func($atts, $content = null) {
 		shortcode_atts( 
 			array(
 			'title' => '',
-			'element' => 'h3',
-			'open' => false
+			'element' => 'h2',
+			'open' => false,
+			'plusicon' => true
 			), 
 			$atts
 		)
@@ -54,8 +55,9 @@ function bs_collapse_func($atts, $content = null) {
 	
 	$idnum = rand(1,50);
 	$open == true ? $open = ' in' : $open = '';
+	$plusicon == true ? $plusicon = ' +' : $plusicon = '';
 	
-	$collapse_content = "<" . $element . "><a data-toggle='collapse' data-target='#coll" . $idnum . "' class='pointer'>" . $title . " +</a></" . $element . "><div id='coll" . $idnum . "' class='collapse" . $open . "'>" . $content . "</div>";
+	$collapse_content = "<" . $element . "><a data-toggle='collapse' data-target='#coll" . $idnum . "' class='pointer'>" . $title . $plusicon . "</a></" . $element . "><div id='coll" . $idnum . "' class='collapse" . $open . "'>" . do_shortcode($content) . "</div>";
 
 	return $collapse_content;
 	 
