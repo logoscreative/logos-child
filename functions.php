@@ -16,6 +16,10 @@ function update_bootstrap() {
 	wp_register_script( 'bootstrap-two', get_stylesheet_directory_uri() . '/js/lib/bootstrap.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'bootstrap-two' );
 	
+	wp_register_style( 'font-awesome-ie', get_stylesheet_directory_uri() . '/css/lib/font-awesome-ie7.css' );
+    $GLOBALS['wp_styles']->add_data( 'font-awesome-ie', 'conditional', 'lt IE 8' );
+    wp_enqueue_style( 'font-awesome-ie' );
+	
 	wp_enqueue_style( 'standard' );
 	
 }
