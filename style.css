@@ -10,4 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: standard
 */
 
+/* Uncomment the @import line below to bring in Standard's CSS
+
+@import url( '../standard/style.css' );*/
 @import url( 'css/lib/font-awesome.min.css' );

@@ -4,6 +4,8 @@
 
 Child theme kit for [Logos Creative](http://logos-creative.com) themes built on [Standard 3](http://standardtheme.com).
 
+What this *really* does is use Standard as a framework. **All of Standard's styles and scripts are dequeued! Instead, the latest version of Bootstrap is loaded along with FitVids.js.** You'll need to write your own styles. You can also uncomment the `@import` line in the `style.css` file if you just want to grab Standard's main CSS. Otherwise, remove the `wp_dequeue_style`/`wp_dequeue_script` calls in `functions.php`.
+
 ## Shortcodes
 
 First of all, your content will *always* work without shortcodes—these are simply present to give you easy ways to access features of Bootstrap without having to make a page template.
@@ -37,10 +39,13 @@ The following shows the available arguments/options along with the default setti
 ### Row: <a href="http://twitter.github.com/bootstrap/scaffolding.html" target="_blank">(Documentation)</a> ###
 
 ```[row fluid=false class=null][/row]```
+```[inner-row fluid=false class=null][/row]```
 
 ### Span: <a href="http://twitter.github.com/bootstrap/scaffolding.html" target="_blank">(Documentation)</a> ###
 
 ```[span width=12 offset=0 class=null][/span]```
+```[inner-span width=12 offset=0 class=null][/span]```
+```[inner-inner-span width=12 offset=0 class=null][/span]```
 
 ### Button Group: <a href="http://twitter.github.com/bootstrap/components.html#buttonGroups" target="_blank">(Documentation)</a> ###
 
