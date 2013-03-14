@@ -1,7 +1,7 @@
 /*  
 Theme Name: Logos Creative Child Theme for Standard
 Theme URI: https://github.com/eightbit/standard-child-theme-kit
-Version: 1.0
+Version: 2.0
 Description: Logos Creative child theme for Standard 3
 Author: Logos Creative
 Author URI: http://logos-creative.com
@@ -10,32 +10,4 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: standard
 */
 
-@import url( '../standard/style.css' );
 @import url( 'css/lib/font-awesome.min.css' );
-
-/* Media Queries */
-
-/* Smartphones */
-@media (max-width: 480px) {
-
-}
-
-/* Tablet and Mobile */
-@media (max-width: 979px) {	
-			
-}
-
-/* Mobile to Tablet */
-@media only screen and (max-width: 767px) {
-	
-}
-
-/* Landscape Tablets */
-@media (min-width: 768px) and (max-width: 979px) {
-
-}
-
-/* Desktop */
-@media (min-width: 980px) {
-	
-}
