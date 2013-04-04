@@ -391,13 +391,19 @@ function bs_well_func($atts, $content = null) {
         )
     );
 
+    if ( $class !== '' ) {
+        $class = " " . $class;
+    }
+
     $size != '' ? $size = " well-" . $size : $size = "";
 
-    $well_content = "<div class='well" . $size . "'>" . do_shortcode($content) . "</div>";
+    $well_content = "<div class='well" . $size . $class . "'>" . do_shortcode($content) . "</div>";
 
     return $well_content;
 
 }
+
+add_shortcode( 'well', 'bs_well_func' );
 
 /* Scrollspy: http://twitter.github.com/bootstrap/components.html#misc */
 
