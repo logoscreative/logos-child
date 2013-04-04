@@ -385,7 +385,8 @@ function bs_well_func($atts, $content = null) {
     extract(
         shortcode_atts(
             array(
-                'size' => false
+                'size' => false,
+                'class' => ''
             ),
             $atts
         )
