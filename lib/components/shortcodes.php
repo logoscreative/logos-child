@@ -20,7 +20,7 @@ function bs_collapse_func($atts, $content = null) {
         )
     );
 
-    $idnum = rand(1,50);
+    $idnum = rand(1,500);
     $open === true ? $open = ' in' : $open = '';
     $plusicon == true ? $plusicon = ' +' : $plusicon = '';
 
@@ -51,7 +51,7 @@ function bs_tabs_func($atts, $content = null) {
         $class = " " . $class;
     }
 
-    $tabs_content = "<ul class='nav nav-tabs'>" . do_shortcode($content) . "</ul>";
+    $tabs_content = "<ul class='nav nav-tabs" . $class . "'>" . do_shortcode($content) . "</ul>";
 
     return $tabs_content;
 
@@ -61,27 +61,52 @@ add_shortcode( 'tabs', 'bs_tabs_func' );
 
 /* Tab: http://twitter.github.com/bootstrap/javascript.html#tabs */
 
-/* [tab title="default" active=false] */
+/* [tab title="default" active=false class=null icon=null element=null] */
 
-function bs_tab_func($atts, $content = null) {
+function bs_tab_func($atts) {
 
     extract(
         shortcode_atts(
             array(
                 'title' => 'default',
-                'active' => false
+                'active' => false,
+                'class' => '',
+                'icon' => '',
+                'element' => ''
             ),
             $atts
         )
     );
 
-    if ( $active == true ) {
-        $active = " class='active'";
-    } else {
-        $active = "";
+    if ( $class != '' ) {
+        $class = " " . $class;
     }
 
-    $tab_content = "<li" . $active . "><a href='#" . slug($title) . "' data-toggle='tab'>" . $title . "</a></li>";
+    if ( $active == true ) {
+        $active = " class='active"  . $class . "'";
+    } else {
+        $active = " class='" . $class . "'";
+    }
+
+    $tab_content = "<li" . $active . ">";
+
+    if ( $element != '' ) {
+        $tab_content .= "<" . $element . ">";
+    }
+
+    $tab_content .= "<a href='#" . slug($title) . "' data-toggle='tab'>";
+
+    if ( $icon != '' ) {
+        $tab_content .= "<i class='icon-" . $icon . " icon-white icon-2x'></i><br />";
+    }
+
+    $tab_content .= do_shortcode($title) . "</a>";
+
+    if ( $element != '' ) {
+        $tab_content .= "</" . $element . ">";
+    }
+
+    $tab_content .= "</li>";
 
     return $tab_content;
 
@@ -105,7 +130,7 @@ add_shortcode( 'tabcontent-group', 'bs_tab_content_group_func' );
 
 /* Tab Content: http://twitter.github.com/bootstrap/javascript.html#tabs */
 
-/* [tabcontent title=null active=true][/tabcontent] */
+/* [tabcontent title=null class=null active=false fade=false][/tabcontent] */
 
 function bs_tab_content_func($atts, $content = null) {
 
@@ -113,19 +138,27 @@ function bs_tab_content_func($atts, $content = null) {
         shortcode_atts(
             array(
                 'title' => 'default',
-                'active' => false
+                'class' => '',
+                'active' => false,
+                'fade' => false
             ),
             $atts
         )
     );
 
     if ( $active == true ) {
-        $active = " active";
+        $active = " in active";
     } else {
         $active = "";
     }
 
-    $tab_content = "<div class='tab-pane" . $active . "' id='" . slug($title) . "'>" . do_shortcode($content) . "</div>";
+    if ( $fade == true ) {
+        $fade = " fade";
+    } else {
+        $fade = "";
+    }
+
+    $tab_content = "<div class='tab-pane" . $fade . $active . "' id='" . slug($title) . "'>" . do_shortcode($content) . "</div>";
 
     return $tab_content;
 
@@ -135,7 +168,7 @@ add_shortcode( 'tabcontent', 'bs_tab_content_func' );
 
 /* Buttons: http://twitter.github.com/bootstrap/base-css.html#buttons */
 
-/* [button text=null link="#" style=null size=null icon=null iconwhite=false class=null newwindow=false] */
+/* [button text=null link=null style=null size=null icon=null iconwhite=false class=null newwindow=false] */
 
 function bs_button_func($atts) {
 
@@ -337,7 +370,7 @@ add_shortcode( 'homebut', 'bs_homebut_func' );
 
 /* Button Group: http://twitter.github.com/bootstrap/components.html#buttonGroups */
 
-/* [btngroup class=null] */
+/* [btngroup class=null][/btngroup] */
 
 function bs_btngrp_func($atts, $content = null) {
 
@@ -364,7 +397,7 @@ add_shortcode( 'btngroup', 'bs_btngrp_func' );
 
 /* Hero: http://twitter.github.com/bootstrap/components.html#typography */
 
-/* [hero] */
+/* [hero][/hero] */
 
 function bs_hero_func($atts, $content = null) {
 
@@ -378,7 +411,7 @@ add_shortcode( 'hero', 'bs_hero_func' );
 
 /* Well: http://twitter.github.com/bootstrap/components.html#misc */
 
-/* [well size=null] */
+/* [well size=null class=null][/well] */
 
 function bs_well_func($atts, $content = null) {
 
@@ -405,45 +438,6 @@ function bs_well_func($atts, $content = null) {
 }
 
 add_shortcode( 'well', 'bs_well_func' );
-
-/* Scrollspy: http://twitter.github.com/bootstrap/components.html#misc */
-
-/* [scrollspy] */
-
-function bs_scrollspy_func($atts, $content = null) {
-
-    extract(
-        shortcode_atts(
-            array(
-                'offset' => 10
-            ),
-            $atts
-        )
-    );
-
-    $scrollspy_content = '
-	<div class="navbar" id="navbar-features">
-		<div class="navbar-inner stickynav">
-			<ul class="nav span12">
-				<li class="span4">
-					<a href="#use"><i class="icon-thumbs-up"></i> Unrivaled Ease of Use</a>
-				</li>
-				<li class="span4">
-					<a href="#features"><i class="icon-cogs"></i> Powerful Features</a>
-				</li>
-				<li class="span4">
-					<a href="#support"><i class="icon-info-sign"></i> Best-in-Class Support</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	';
-
-    return $scrollspy_content;
-
-}
-
-add_shortcode( 'scrollspy', 'bs_scrollspy_func' );
 
 /* Icon: http://fortawesome.github.com/Font-Awesome/ */
 
