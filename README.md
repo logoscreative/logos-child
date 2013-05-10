@@ -65,7 +65,7 @@ The following shows the available arguments/options along with the default setti
 
 ### Thumbnails: <a href="http://twitter.github.com/bootstrap/components.html#thumbnails" target="_blank">(Documentation)</a> ###
 
-```[thumbnails][/thumbnails]```
+<code>[thumbnails][/thumbnails]<code>
 
 ### Thumbnail: <a href="http://twitter.github.com/bootstrap/components.html#thumbnails" target="_blank">(Documentation)</a> ###
 
