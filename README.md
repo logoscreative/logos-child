@@ -69,4 +69,4 @@ The following shows the available arguments/options along with the default setti
 
 ### Thumbnail: <a href="http://twitter.github.com/bootstrap/components.html#thumbnails" target="_blank">(Documentation)</a> ###
 
-```[thumbnail size=4 src=null title=null content=null class=null]```
+```[thumbnail size=4 src=null title=null content=null class=null][/thumbnail]```

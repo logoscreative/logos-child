@@ -483,7 +483,7 @@ add_shortcode( 'thumbnails', 'bs_thumbnails_func' );
 
 /* Thumbnail: http://twitter.github.com/bootstrap/components.html#thumbnails */
 
-/* [thumbnail size=4 src=null title=null content=null class=null] */
+/* [thumbnail size=4 src=null title=null content=null class=null][/thumbnail] */
 
 function bs_thumbnail_func($atts, $content = null) {
 
