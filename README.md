@@ -53,7 +53,7 @@ The following shows the available arguments/options along with the default setti
 
 ### Hero: <a href="http://twitter.github.com/bootstrap/components.html#typography" target="_blank">(Documentation)</a> ###
 
-```[hero][/hero]```
+<code>[hero][/hero]</code>
 
 ### Well: <a href="http://twitter.github.com/bootstrap/components.html#misc" target="_blank">(Documentation)</a> ###
 
