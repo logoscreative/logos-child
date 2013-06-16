@@ -1,6 +1,6 @@
 <?php
 
-/* Update to Bootstrap 2.2.1 */
+/* Update to Bootstrap 2.3.2 */
 
 function update_bootstrap() {
 
