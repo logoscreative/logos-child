@@ -73,37 +73,8 @@
         <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/js/lib/html5shiv.js'; ?>"></script>
         <![endif]-->
         <?php wp_head(); ?>
-        <!--[if lt IE 9]>
-        <style type="text/css">
-            .bigbg div {
-                z-index: 0;
-            }
-            .navbar .brand img {
-                width: auto;
-            }
-            .post .entry-content .projloop .span3 {
-                margin-right: 15px;
-            }
-            .breadcrumb a {
-                color: black;
-            }
-            .post .entry-content a {
-                color: black;
-            }
-            .post .post-header-meta a, .post .post-meta a {
-                color: white;
-            }
-            #respond #commentform, #respond #comment-form-wrapper {
-                background: #FFFFFC;
-            }
-        </style>
-        <![endif]-->
 	</head>
 	<body <?php body_class(); ?>>
-
-        <div class="bigbg">
-            <div></div>
-        </div>
 
 		<?php if( standard_is_offline() && ! current_user_can( 'manage_options' ) ) { ?>
 			<?php get_template_part( 'page', 'offline-mode' ); ?>
