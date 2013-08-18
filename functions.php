@@ -1,6 +1,8 @@
 <?php
 
-/* Update to Bootstrap 2.3.2 */
+define( 'STANDARD_THEME_VERSION', '1.0' );
+
+/* Update to Bootstrap 3.0 RC2 */
 
 function update_bootstrap() {
 
@@ -16,21 +18,26 @@ function update_bootstrap() {
     wp_dequeue_style( 'standard-activity-tabs');
 
     wp_dequeue_style( 'bootstrap' );
-    wp_register_style( 'bootstrap-latest', get_stylesheet_directory_uri() . '/css/lib/bootstrap.min.css' );
+    wp_register_style( 'bootstrap-latest', '//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css' );
     wp_enqueue_style( 'bootstrap-latest' );
 
     wp_dequeue_script( 'bootstrap' );
     wp_dequeue_script( 'fitvid' );
     wp_dequeue_script( 'theme-main' );
-    wp_register_script( 'bootstrap-latest', get_stylesheet_directory_uri() . '/js/lib/bootstrap.min.js', array( 'jquery' ) );
+    wp_register_script( 'bootstrap-latest', '//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js', array( 'jquery' ) );
     wp_enqueue_script( 'bootstrap-latest' );
     wp_enqueue_script( 'fitvid' );
 
-    wp_register_style( 'font-awesome-ie', get_stylesheet_directory_uri() . '/css/lib/font-awesome-ie7.css' );
+    wp_register_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome' );
+
+    wp_register_style( 'font-awesome-ie', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css' );
     $GLOBALS['wp_styles']->add_data( 'font-awesome-ie', 'conditional', 'lt IE 8' );
     wp_enqueue_style( 'font-awesome-ie' );
 
     wp_enqueue_style( 'standard' );
+    wp_register_style( 'child-styles', get_stylesheet_directory_uri() . '/assets/css/main.min.css' );
+    wp_enqueue_style( 'child-styles' );
 
 }
 

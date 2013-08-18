@@ -1,0 +1,31 @@
+{
+  "name": "logos-child",
+  "version": "3.0.0",
+  "description": "Logos Creative child theme for Standard 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/logoscreative/logos-child.git"
+  },
+  "bugs": {
+    "url": "https://github.com/retlehs/roots/issues"
+  },
+  "author": "Logos Creative",
+  "homepage": "http://logoscreative.co",
+  "readmeFilename": "README.md",
+  "gitHead": "2f4fe57fbfec842cd07b01ddf09e68165c038572",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-recess": "~0.3.5",
+    "grunt-imageoptim": "~1.2.11",
+    "grunt-version": "~0.2.2"
+  }
+}
